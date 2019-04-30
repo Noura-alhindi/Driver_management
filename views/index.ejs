@@ -1,0 +1,30 @@
+<html>
+    <head>
+        
+        <!-- <link rel="stylesheet" href="app.css"> -->
+    </head>
+    <body> 
+        <h1>Driver management</h1>
+        <nav>
+        <a href="/companys/new">add a new </a>
+        </nav>
+        
+        <ul>
+        <% for (i in company) { %>
+        <li>
+            <%= company[i].name %>, 
+            <%= company[i].logo %>, 
+            <%= company[i].address %>
+            <%= company[i].city %>
+            <%= company[i].telephone %>
+
+        </li>
+        <a href="/company/<%= company[i]._id %>/edit">EDIT</a>
+        <a href="/company/<%= company[i]._id %>/">Show</a>
+        <form action="/companys/<%= i %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE"/>
+        </form>
+        <% } %>
+        </ul>
+        </body>
+    </html>

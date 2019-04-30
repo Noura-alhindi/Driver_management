@@ -1,0 +1,22 @@
+{
+  "name": "driver_management",
+  "version": "1.0.0",
+  "description": "driver management app",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "driver",
+    "mongo",
+    "mongoose"
+  ],
+  "author": "Noura",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.4"
+  }
+}
