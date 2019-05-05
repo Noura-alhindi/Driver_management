@@ -1,0 +1,30 @@
+<html>
+    <head>
+        
+        
+    </head>
+    <body> 
+        <h1>Car index page </h1>
+        <nav>
+        <a href="/cars/new">add a new </a>
+        </nav>
+        
+        <ul>
+        <% for (i in car) { %>
+        <li>
+            <%= car[i].name %>, 
+            <%= car[i].model %>, 
+            <%= car[i].year %>
+            <%= car[i].image %>
+        
+
+        </li>
+        <a href="/car/<%= car[i]._id %>/edit">Edit</a>
+        <a href="/car/<%= car[i]._id %>/">Show</a>
+        <form action="/cars/<%= i %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE"/>
+        </form>
+        <% } %>
+        </ul>
+        </body>
+    </html>
