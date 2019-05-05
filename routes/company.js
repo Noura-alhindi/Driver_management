@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 
 const Company = require('../models/company')
-
+const Car = require('../models/car')
+const Driver = require('../models/driver')
 
 // Index company
 router.get('/companys',(req,res )=>{
@@ -38,7 +39,7 @@ router.post('/companys',(req,res)=>{
 })
 //Show company
 router.get('/company/:id',(req,res)=>{
-    Company.findById(req.params.id)
+    Company.findById(req.params.id).populate('car','drivers')
     .then((company)=>{
         res.render('show',{
             company: company
